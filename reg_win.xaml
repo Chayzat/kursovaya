@@ -1,0 +1,28 @@
+﻿<Window x:Class="kurs_proj.reg_win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_proj"
+        mc:Ignorable="d"
+        Title="reg_win" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid Margin="2,0,-2.333,0">
+        <Button x:Name="btn_back" Margin="8,8,712,385" Click="btn_back_Click" Content="назад"/>
+        <Label FontSize="18" Content="Регистрация" Margin="210.667,13,233,0" VerticalAlignment="Top" Width="351" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="30"/>
+        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Height="29" Margin="128,59,0,0" TextWrapping="Wrap" Text="Имя*" VerticalAlignment="Top" Width="310" PreviewMouseLeftButtonDown="tb_name_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="tb_first_name" HorizontalAlignment="Left" Height="29" Margin="127,98,0,0" TextWrapping="Wrap" Text="Фамилия*" VerticalAlignment="Top" Width="310" PreviewMouseLeftButtonDown="tb_first_name_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="tb_last_name" HorizontalAlignment="Left" Height="29" Margin="127,137,0,0" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Top" Width="310" PreviewMouseLeftButtonDown="tb_last_name_PreviewMouseLeftButtonDown"/>
+        <DatePicker x:Name="dp_birth" HorizontalAlignment="Left" Height="30" Margin="132,177,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="tb_post" HorizontalAlignment="Left" Height="29" Margin="128,215,0,0" TextWrapping="Wrap" Text="Должность*" VerticalAlignment="Top" Width="310" PreviewMouseLeftButtonDown="tb_post_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="tb_email" HorizontalAlignment="Left" Height="29" Margin="126,252,0,0" TextWrapping="Wrap" Text="Электронная почта*" VerticalAlignment="Top" Width="517" PreviewMouseLeftButtonDown="tb_email_PreviewMouseLeftButtonDown"/>
+        <PasswordBox x:Name="ps_1" HorizontalAlignment="Left" Margin="124,290,0,0" VerticalAlignment="Top" Height="31" Width="519"/>
+        <PasswordBox x:Name="ps_2" HorizontalAlignment="Left" Margin="124,329,0,0" VerticalAlignment="Top" Height="31" Width="517"/>
+        <Image x:Name="photo" HorizontalAlignment="Left" Height="146" Margin="456,58,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" Height="29" Margin="218,375,0,0" VerticalAlignment="Top" Width="346" Click="Button_Click"/>
+        <TextBox x:Name="gender" HorizontalAlignment="Left" Height="29" Margin="263,174,0,0" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Width="59" PreviewMouseLeftButtonDown="gender_PreviewMouseLeftButtonDown" />
+        <Button x:Name="btn_photo" Content="Загрузить фото" HorizontalAlignment="Left" Margin="465,211,0,0" VerticalAlignment="Top" Width="146" Height="29" Click="btn_photo_Click"/>
+        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="29" Margin="349,175,0,0" TextWrapping="Wrap" Text="ID*" VerticalAlignment="Top" Width="59" PreviewMouseLeftButtonDown="ID_PreviewMouseLeftButtonDown" />
+
+    </Grid>
+</Window>

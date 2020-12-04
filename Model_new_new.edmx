@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище iccModel_new_new" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="emps">
+          <Key>
+            <PropertyRef Name="ID_employee" />
+          </Key>
+          <Property Name="ID_employee" Type="int" Nullable="false" />
+          <Property Name="first_name_emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_name_emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="birth_emp" Type="date" />
+          <Property Name="gender_emp" Type="char" MaxLength="10" />
+          <Property Name="post_emp" Type="nvarchar" MaxLength="100" />
+          <Property Name="email_emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="passw_emp" Type="nvarchar" MaxLength="30" />
+          <Property Name="photo_prof" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="mpr">
+          <Key>
+            <PropertyRef Name="ID_mrp" />
+          </Key>
+          <Property Name="ID_mrp" Type="int" Nullable="false" />
+          <Property Name="name_mrp" Type="nvarchar" MaxLength="200" />
+          <Property Name="date_mrp" Type="date" />
+          <Property Name="opic_mrp" Type="nvarchar(max)" />
+          <Property Name="categ_mrp" Type="nchar" MaxLength="10" />
+          <Property Name="photo_mrp" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="ID_news" />
+          </Key>
+          <Property Name="ID_news" Type="int" Nullable="false" />
+          <Property Name="name_news" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_news" Type="date" />
+          <Property Name="opic_news" Type="nvarchar(max)" />
+          <Property Name="photo_news" Type="image" />
+          <Property Name="categ_news" Type="nvarchar" MaxLength="100" />
+          <Property Name="doc_news" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="partners">
+          <Key>
+            <PropertyRef Name="ID_partn" />
+          </Key>
+          <Property Name="ID_partn" Type="int" Nullable="false" />
+          <Property Name="first_name_partn" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_partn" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_name_partn" Type="nvarchar" MaxLength="50" />
+          <Property Name="birth_partn" Type="date" />
+          <Property Name="gender_partn" Type="nchar" MaxLength="10" />
+          <Property Name="company" Type="nvarchar" MaxLength="100" />
+          <Property Name="post_partn" Type="nvarchar" MaxLength="100" />
+          <Property Name="email_partn" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="photo_pr" Type="varbinary(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "icc.dbo.rep" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="rep">
+          <Property Name="name_rep" Type="nvarchar" MaxLength="100" />
+          <Property Name="file_path" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_file" Type="date" />
+          <Property Name="file_rep" Type="varbinary(max)" />
+          <Property Name="ctg_rep" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+        <EntityType Name="reports">
+          <Key>
+            <PropertyRef Name="ID_report" />
+          </Key>
+          <Property Name="ID_report" Type="int" Nullable="false" />
+          <Property Name="name_report" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_rep" Type="date" />
+          <Property Name="categ_rep" Type="nvarchar" MaxLength="100" />
+          <Property Name="file_rep" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="Хранилище iccModel_new_newContainer">
+          <EntitySet Name="emps" EntityType="Self.emps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mpr" EntityType="Self.mpr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partners" EntityType="Self.partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reports" EntityType="Self.reports" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iccModel_new_new" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="emps">
+          <Key>
+            <PropertyRef Name="ID_employee" />
+          </Key>
+          <Property Name="ID_employee" Type="Int32" Nullable="false" />
+          <Property Name="first_name_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_name_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birth_emp" Type="DateTime" Precision="0" />
+          <Property Name="gender_emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="post_emp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passw_emp" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="photo_prof" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="mpr">
+          <Key>
+            <PropertyRef Name="ID_mrp" />
+          </Key>
+          <Property Name="ID_mrp" Type="Int32" Nullable="false" />
+          <Property Name="name_mrp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="date_mrp" Type="DateTime" Precision="0" />
+          <Property Name="opic_mrp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="categ_mrp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="photo_mrp" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="ID_news" />
+          </Key>
+          <Property Name="ID_news" Type="Int32" Nullable="false" />
+          <Property Name="name_news" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_news" Type="DateTime" Precision="0" />
+          <Property Name="opic_news" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="photo_news" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="categ_news" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="doc_news" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="partners">
+          <Key>
+            <PropertyRef Name="ID_partn" />
+          </Key>
+          <Property Name="ID_partn" Type="Int32" Nullable="false" />
+          <Property Name="first_name_partn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name_partn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_name_partn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birth_partn" Type="DateTime" Precision="0" />
+          <Property Name="gender_partn" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="post_partn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email_partn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="photo_pr" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="reports">
+          <Key>
+            <PropertyRef Name="ID_report" />
+          </Key>
+          <Property Name="ID_report" Type="Int32" Nullable="false" />
+          <Property Name="name_report" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_rep" Type="DateTime" Precision="0" />
+          <Property Name="categ_rep" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="file_rep" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="iccEntities_new_new" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="emps" EntityType="Self.emps" />
+          <EntitySet Name="mpr" EntityType="Self.mpr" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="partners" EntityType="Self.partners" />
+          <EntitySet Name="reports" EntityType="Self.reports" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище iccModel_new_newContainer" CdmEntityContainer="iccEntities_new_new">
+          <EntitySetMapping Name="emps">
+            <EntityTypeMapping TypeName="iccModel_new_new.emps">
+              <MappingFragment StoreEntitySet="emps">
+                <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+                <ScalarProperty Name="first_name_emp" ColumnName="first_name_emp" />
+                <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+                <ScalarProperty Name="last_name_emp" ColumnName="last_name_emp" />
+                <ScalarProperty Name="birth_emp" ColumnName="birth_emp" />
+                <ScalarProperty Name="gender_emp" ColumnName="gender_emp" />
+                <ScalarProperty Name="post_emp" ColumnName="post_emp" />
+                <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+                <ScalarProperty Name="passw_emp" ColumnName="passw_emp" />
+                <ScalarProperty Name="photo_prof" ColumnName="photo_prof" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mpr">
+            <EntityTypeMapping TypeName="iccModel_new_new.mpr">
+              <MappingFragment StoreEntitySet="mpr">
+                <ScalarProperty Name="ID_mrp" ColumnName="ID_mrp" />
+                <ScalarProperty Name="name_mrp" ColumnName="name_mrp" />
+                <ScalarProperty Name="date_mrp" ColumnName="date_mrp" />
+                <ScalarProperty Name="opic_mrp" ColumnName="opic_mrp" />
+                <ScalarProperty Name="categ_mrp" ColumnName="categ_mrp" />
+                <ScalarProperty Name="photo_mrp" ColumnName="photo_mrp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="iccModel_new_new.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
+                <ScalarProperty Name="name_news" ColumnName="name_news" />
+                <ScalarProperty Name="date_news" ColumnName="date_news" />
+                <ScalarProperty Name="opic_news" ColumnName="opic_news" />
+                <ScalarProperty Name="photo_news" ColumnName="photo_news" />
+                <ScalarProperty Name="categ_news" ColumnName="categ_news" />
+                <ScalarProperty Name="doc_news" ColumnName="doc_news" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partners">
+            <EntityTypeMapping TypeName="iccModel_new_new.partners">
+              <MappingFragment StoreEntitySet="partners">
+                <ScalarProperty Name="ID_partn" ColumnName="ID_partn" />
+                <ScalarProperty Name="first_name_partn" ColumnName="first_name_partn" />
+                <ScalarProperty Name="name_partn" ColumnName="name_partn" />
+                <ScalarProperty Name="last_name_partn" ColumnName="last_name_partn" />
+                <ScalarProperty Name="birth_partn" ColumnName="birth_partn" />
+                <ScalarProperty Name="gender_partn" ColumnName="gender_partn" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="post_partn" ColumnName="post_partn" />
+                <ScalarProperty Name="email_partn" ColumnName="email_partn" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="photo_pr" ColumnName="photo_pr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reports">
+            <EntityTypeMapping TypeName="iccModel_new_new.reports">
+              <MappingFragment StoreEntitySet="reports">
+                <ScalarProperty Name="ID_report" ColumnName="ID_report" />
+                <ScalarProperty Name="name_report" ColumnName="name_report" />
+                <ScalarProperty Name="date_rep" ColumnName="date_rep" />
+                <ScalarProperty Name="categ_rep" ColumnName="categ_rep" />
+                <ScalarProperty Name="file_rep" ColumnName="file_rep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
